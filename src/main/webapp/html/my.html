@@ -7,11 +7,16 @@
     <script src="/js/create&save.js"></script>
     <script src="/js/getListHtml.js"></script>
     <link href="/css/my.css" rel="stylesheet">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <link href="/css/my2.css" rel="stylesheet">
 </head>
 <body onload="showTable()">
+
+<script>
+    let js = document.createElement("script");
+    js.src = "/my.js?" + Date.now();
+    document.body.appendChild(js);
+</script>
+
 <h1>RPG admin panel</h1>
 
 <div>
@@ -32,7 +37,7 @@
         <th>Title</th>
         <th>Race</th>
         <th>Profession</th>
-        <th>Level</th>
+        <th>Lvl</th>
         <th>Birthday</th>
         <th>Banned</th>
         <th>Edit</th>
@@ -48,57 +53,70 @@
 <hr>
 <h2>Create new account:</h2>
 
-<label for="input_name_create">Name:</label>
-<input type="text" id="input_name_create" name="name" required size="12" maxlength="12">
-<br>
 
-<label for="input_title_create">Title:</label>
-<input type="text" id="input_title_create" name="title" required size="30" maxlength="30">
-<br>
+<div id="create_account_fields">
+    <div>
+        <label for="input_name_create">Name:</label>
+        <input type="text" id="input_name_create" name="name" required size="12" maxlength="12">
+    </div>
 
-<label for="input_race_create">Race:</label>
-<select id="input_race_create" name='race'>
-    <option value='HUMAN'>HUMAN</option>
-    <option value='DWARF'>DWARF</option>
-    <option value='ELF'>ELF</option>
-    <option value='GIANT'>GIANT</option>
-    <option value='ORC'>ORC</option>
-    <option value='TROLL'>TROLL</option>
-    <option value='HOBBIT'>HOBBIT</option>
-</select>
-<br>
+    <div>
+        <label for="input_title_create">Title:</label>
+        <input type="text" id="input_title_create" name="title" required size="30" maxlength="30">
+    </div>
 
-<label for="input_profession_create">Profession:</label>
-<select id="input_profession_create" name='profession'>
-    <option value='WARRIOR'>WARRIOR</option>
-    <option value='ROGUE'>ROGUE</option>
-    <option value='SORCERER'>SORCERER</option>
-    <option value='CLERIC'>CLERIC</option>
-    <option value='PALADIN'>PALADIN</option>
-    <option value='NAZGUL'>NAZGUL</option>
-    <option value='DRUID'>DRUID</option>
-</select>
-<br>
+    <div>
+        <label for="input_race_create">Race:</label>
+        <select id="input_race_create" name='race'>
+            <option value='HUMAN'>HUMAN</option>
+            <option value='DWARF'>DWARF</option>
+            <option value='ELF'>ELF</option>
+            <option value='GIANT'>GIANT</option>
+            <option value='ORC'>ORC</option>
+            <option value='TROLL'>TROLL</option>
+            <option value='HOBBIT'>HOBBIT</option>
+        </select>
+    </div>
 
-<label for="input_level_create">Level:</label>
-<input type="number" id="input_level_create" name="level" min="0" max="100">
-<br>
+    <div>
+        <label for="input_profession_create">Profession:</label>
+        <select id="input_profession_create" name='profession'>
+            <option value='WARRIOR'>WARRIOR</option>
+            <option value='ROGUE'>ROGUE</option>
+            <option value='SORCERER'>SORCERER</option>
+            <option value='CLERIC'>CLERIC</option>
+            <option value='PALADIN'>PALADIN</option>
+            <option value='NAZGUL'>NAZGUL</option>
+            <option value='DRUID'>DRUID</option>
+        </select>
+    </div>
 
-<label for="input_birthday_create">Birthday:</label>
-<input type="date" id="input_birthday_create" name="birthday" min="2000-01-01" max="3000-12-31">
-<br>
+    <div>
+        <label for="input_level_create">Level:</label>
+        <input type="number" id="input_level_create" name="level" min="0" max="100">
+    </div>
 
-<label for="input_banned_create">Banned:</label>
-<select id="input_banned_create" name='banned'>
-    <option value='false'>false</option>
-    <option value='true'>true</option>
-</select>
-<br>
+    <div>
+        <label for="input_birthday_create">Birthday:</label>
+        <input type="date" id="input_birthday_create" name="birthday" min="2000-01-01" max="3000-12-31">
+    </div>
 
+    <div>
+        <label for="input_banned_create">Banned:</label>
+        <select id="input_banned_create" name='banned'>
+            <option value='false'>false</option>
+            <option value='true'>true</option>
+        </select>
+    </div>
+
+</div>
+
+<br>
 
 <div>
-    <button type="submit" onclick="createAccount()">Save</button>
+    <button id="create_account_button" type="submit" onclick="createAccount()">Save</button>
 </div>
+
 
 
 </body>
