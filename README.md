@@ -1,6 +1,7 @@
 # project-front
 
-For JavaRush Task https://javarush.com/quests/lectures/jru.module3.lecture02
+<p>For JavaRush Task https://javarush.com/quests/lectures/jru.module3.lecture02</p>
 
-My table turned out to be very incompressible. It is good on full screen. 
-Perhaps with a few more hours I would have found a better solution.. but I've had enough JS.
+<p>For loading CSS styles use Ctrl + F5 // Shift + F5 // Ctrl + Shift + R (to disable caching)</p>
+
+

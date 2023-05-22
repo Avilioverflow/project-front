@@ -21,7 +21,7 @@ function showTable(page_num){
         success: function (data){
             let tableBody = $("#table_accounts tbody");
 
-            $("#table_accounts tbody").fadeOut(300, function() {
+            $("#table_accounts tbody").fadeOut(500, function() {
                 tableBody.empty();
                 data.forEach(function (item){
                     let row = $('<tr>');
